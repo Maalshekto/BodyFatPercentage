@@ -1,0 +1,9 @@
+name: BodyFatPercentage
+account: tmartin
+server: shinyapps.io
+appId: 93835
+bundleId: 417222
+url: https://tmartin.shinyapps.io/BodyFatPercentage/
+when: 1460468474.84878
+asMultiple: FALSE
+asStatic: FALSE

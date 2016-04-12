@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"Body Fat Percentage\"),\n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      fluidRow(\n                column(6, \n                       numericInput(\"Weight\", \n                                    label = h3(\"Enter your weight (in Kg)\"), \n                                    value = 60)),\n                column(6, \n                       numericInput(\"Size\", \n                                    label = h3(\"Enter your height (in cm)\"), \n                                    value = 170))\n      ),            \n      sliderInput(\"Age\",\n                  h3(\"Select your age:\"),\n                  min = 8,\n                  max = 100,\n                  value = 30),\n      radioButtons(\"Sexe\", \n                   h3(\"Choose your sex:\"),\n                   choices = list(\"Female\" = 0, \"Male\" = 1),\n                   selected = 0)\n    ),\n\n    # Show a plot of the generated distribution\n    mainPanel(\n      h3(textOutput(\"bmi\")),\n      h3(textOutput(\"bfp\")),\n      h3(textOutput(\"category\")),\n      br(),\n      br(),\n      br(),\n      br(),\n      br(),\n      h4(\"Medical Disclaimer :\"),\n      p(\"This application is not intended to be a substitute for professional\n         medical advice, diagnosis, or treatment.\"),\n      p(\"Always seek the advice of your physician or other qualified health \n         provider with any questions you may have regarding a medical condition.\"),\n      br(),\n      h4(\"Source : \"),\n      a(href = \"https://en.wikipedia.org/wiki/Body_fat_percentage\",\n        \"https://en.wikipedia.org/wiki/Body_fat_percentage\")\n      \n    )\n  )\n))\n",
+    "created" : 1460461365796.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2829557707",
+    "id" : "1669F7BE",
+    "lastKnownWriteTime" : 1460468457,
+    "path" : "~/BodyFatPercentage/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

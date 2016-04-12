@@ -1,0 +1,17 @@
+{
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyServer(function(input, output) {\n          \n        output$bmi <- renderText({ \n                bmi = round(input$Weight / (input$Size / 100)^2, 2)\n                paste(\"Body mass index : \", bmi)                \n        })\n  \n        output$bfp <- renderText({ \n                bmi = input$Weight / (input$Size / 100)^2 \n                if (input$Age <= 18) {\n                        bfp = 1.51 * bmi - 0.70 * input$Age - 3.6 * as.numeric(input$Sexe) + 1.4\n                }\n                else {\n                        bfp = 1.20 * bmi + 0.23 * input$Age - 10.8 * as.numeric(input$Sexe) -5.4\n\n                }\n                paste(\"Body fat percentage : \", round(bfp,2))\n        })\n        \n        output$category <- renderText({ \n                bmi = input$Weight / (input$Size / 100)^2 \n                if (input$Age <= 18) {\n                        bfp = 1.51 * bmi - 0.70 * input$Age - 3.6 * as.numeric(input$Sexe) + 1.4\n                }\n                else {\n                        bfp = 1.20 * bmi + 0.23 * input$Age - 10.8 * as.numeric(input$Sexe) -5.4\n                        \n                }\n                if(as.numeric(input$Sexe) == 1) {\n                        if(bfp  < 6) {\n                                category = \"Essential Fat\"\n                        }\n                        else if (bfp < 14) {\n                                category = \"Athletes\"\n                        }\n                        else if (bfp < 18) {\n                                category = \"Fitness\"\n                        }\n                        else if (bfp < 25) {\n                                category = \"Average\"\n                        }\n                        else {\n                                category = \"Obeses\"\n                        }\n                        \n                }\n                else {\n                        if(bfp < 14) {\n                                category = \"Essential Fat\"\n                        }\n                        else if (bfp < 21) {\n                                category = \"Athletes\"\n                        }\n                        else if (bfp < 25) {\n                                category = \"Fitness\"\n                        }\n                        else if (bfp < 32) {\n                                category = \"Average\"\n                        }\n                        else {\n                                category = \"Obeses\"\n                        }\n                }\n                paste(\"Categories : \", category)                \n        })\n        \n})\n",
+    "created" : 1460461366007.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "341150028",
+    "id" : "320904A9",
+    "lastKnownWriteTime" : 1460466785,
+    "path" : "~/BodyFatPercentage/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
