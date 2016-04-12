@@ -70,7 +70,7 @@ shinyServer(function(input, output) {
                                 category = "Obeses"
                         }
                 }
-                paste("Categories : ", category)                
+                paste("Category : ", category)                
         })
         
 })

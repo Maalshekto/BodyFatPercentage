@@ -11,7 +11,24 @@ shinyUI(fluidPage(
 
   # Application title
   titlePanel("Body Fat Percentage"),
-
+  br(),
+  h4("Description : "),
+  p("This application calculates your Body Mass Index (BMI) and your Body Fat 
+    Percentage (BFP), then according to the BFP, indicates in which category of
+    people you are." ),
+  p("You have just to set below your weight, height, age & sex to get the results"),
+  br(),
+  h4("Source : "),
+  a(href = "https://en.wikipedia.org/wiki/Body_fat_percentage",
+    "https://en.wikipedia.org/wiki/Body_fat_percentage"),
+  br(),
+  br(),
+  h4("Medical Disclaimer :"),
+  p("This application is not intended to be a substitute for professional
+         medical advice, diagnosis, or treatment."),
+  p("Always seek the advice of your physician or other qualified health 
+         provider with any questions you may have regarding a medical condition."),
+  br(),
   # Sidebar with a slider input for number of bins
   sidebarLayout(
     sidebarPanel(
@@ -40,22 +57,7 @@ shinyUI(fluidPage(
     mainPanel(
       h3(textOutput("bmi")),
       h3(textOutput("bfp")),
-      h3(textOutput("category")),
-      br(),
-      br(),
-      br(),
-      br(),
-      br(),
-      h4("Medical Disclaimer :"),
-      p("This application is not intended to be a substitute for professional
-         medical advice, diagnosis, or treatment."),
-      p("Always seek the advice of your physician or other qualified health 
-         provider with any questions you may have regarding a medical condition."),
-      br(),
-      h4("Source : "),
-      a(href = "https://en.wikipedia.org/wiki/Body_fat_percentage",
-        "https://en.wikipedia.org/wiki/Body_fat_percentage")
-      
+      h3(textOutput("category"))
     )
   )
 ))
